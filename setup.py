@@ -23,5 +23,6 @@ setup(name='mview',
       author_email='hanzhichao2000@foxmail.com',
       license='LGPL',
       packages=find_packages(),
+      url='https://github.com/hanzhichao2000/mview',
       install_requires=['pandas']
       )

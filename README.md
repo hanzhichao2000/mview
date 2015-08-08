@@ -9,7 +9,7 @@ Package to show graphic view of pandas.DataFrame.
 
 ## Setting
 
-An external CSV viewer is required. e.g. MS Excel or [CSVFileView](http://www.nirsoft.net/utils/csv_file_view.html).
+An external CSV viewer is required. e.g. MS Excel, [CSVFileView](http://www.nirsoft.net/utils/csv_file_view.html).
 
     import mview
     mview.update_executor('path/to/csv-viewer.exe')

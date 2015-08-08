@@ -11,8 +11,13 @@ import pandas as pd
 def show_by_tool(data, exec_=None, verbose=False):
     import mview
     if exec_ is None:
-        exec_ = mview.config.get('executor')
+        if mview.config.get('executor') is None:
+            exec_ = ''
+        else:
+            exec_ = mview.config.get('executor')
+
     assert type(data) == pd.DataFrame
+    assert exec_ is not None
 
     fh, filename = tempfile.mkstemp(suffix='.csv')
     os.close(fh)

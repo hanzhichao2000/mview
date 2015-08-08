@@ -2,6 +2,7 @@ __author__ = 'Zhichao HAN'
 
 
 import os
+import codecs
 import collections
 import ConfigParser
 
@@ -25,7 +26,7 @@ def update_executor(path, path_config=_path_config):
     cfg = ConfigParser.RawConfigParser()
     cfg.read(path_config)
     cfg.set('MView', 'executor', path)
-    with open(path_config, 'w+', encoding='utf-8') as fp:
+    with codecs.open(path_config, 'w+', 'utf-8') as fp:
         cfg.write(fp)
     _auto_init_package()
 
@@ -35,7 +36,7 @@ def dump_package(config=collections.defaultdict(str), path=_path_config):
     raw.add_section('MView')
     for k, v in config.items():
         raw.set('MView', k, v)
-    with open(_path_config, 'w+', encoding='utf-8') as fp:
+    with codecs.open(_path_config, 'w+', 'utf-8') as fp:
         raw.write(fp)
 
 

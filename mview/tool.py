@@ -2,6 +2,7 @@ __author__ = 'Zhichao HAN'
 
 
 import os
+import sys
 import tempfile
 import subprocess
 
@@ -12,7 +13,10 @@ def show_by_tool(data, exec_=None, verbose=False):
     import mview
     if exec_ is None:
         if mview.config.get('executor') is None:
-            exec_ = ''
+            if sys.platform=='darwin':
+                exec_ = 'qlmanage -p'
+            else:
+                exec_ = ''
         else:
             exec_ = mview.config.get('executor')
 
